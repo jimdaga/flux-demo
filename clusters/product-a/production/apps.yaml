@@ -13,5 +13,5 @@ spec:
   path: ./apps/production
   prune: true
   validation: client
-  patchesStrategicMerge:
-  - cert-manager-values.yaml
+#   patchesStrategicMerge:
+#   - cert-manager-values.yaml
