@@ -13,7 +13,3 @@ spec:
   path: ./apps/cert-manager/production
   prune: true
   validation: client
-resources:
-  - ../base/cert-manager
-patchesStrategicMerge:
-  - cert-manager-values.yaml
