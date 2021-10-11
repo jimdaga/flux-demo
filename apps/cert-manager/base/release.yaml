@@ -18,8 +18,8 @@ spec:
       retries: 3
   # Default values
   # https://github.com/jetstack/cert-manager/blob/master/deploy/charts/cert-manager/values.yaml
-  values:
-    installCRDs: true
+  # values:
+  #   installCRDs: true
   valuesFrom:
     - kind: ConfigMap
       name: cert-manager-values
