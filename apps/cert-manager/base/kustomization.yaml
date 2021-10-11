@@ -6,9 +6,3 @@ resources:
   - release.yaml
   - letsencrypt-staging.yaml
   - letsencrypt-production.yaml
-configMapGenerator:
-  - name: cert-manager-values
-    files:
-      - values.yaml=my-values.yaml
-configurations:
-  - kustomizeconfig.yaml
