@@ -6,4 +6,4 @@ metadata:
 spec:
   chart:
     spec:
-      replicaCount: 3
+      version: "v1.4.1"
