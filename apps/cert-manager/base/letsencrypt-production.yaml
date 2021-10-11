@@ -1,0 +1,17 @@
+apiVersion: cert-manager.io/v1alpha2
+kind: ClusterIssuer
+metadata:
+  name: letsencrypt-production
+spec:
+  acme:
+    server: https://acme-v02.api.letsencrypt.org/directory
+    email: sig-cloudops@synopsys.com
+    privateKeySecretRef:
+      name: letsencrypt-production
+    solvers:
+    - dns01:
+        clouddns:
+          serviceAccountSecretRef:
+            name: clouddns
+            key: clouddns.key.json
+          project: cloudops-util

@@ -4,3 +4,5 @@ namespace: cert-manager
 resources:
   - namespace.yaml
   - release.yaml
+  - letsencrypt-staging.yaml
+  - letsencrypt-production.yaml
