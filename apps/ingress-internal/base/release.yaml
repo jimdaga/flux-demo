@@ -1,0 +1,47 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: ingress-internal
+  namespace: nginx-ingress
+spec:
+  releaseName: ingress-internal
+  chart:
+    spec:
+      chart: ingress-nginx
+      sourceRef:
+        kind: HelmRepository
+        name: ingress-nginx
+        namespace: flux-system
+  interval: 5m
+  install:
+    remediation:
+      retries: 3
+  # Default values
+  # https://github.com/kubernetes/ingress-nginx/blob/main/charts/ingress-nginx/values.yaml
+  values:
+    controller:
+      ingressClass: ingress-internal
+      kind: Deployment
+      replicaCount: 2
+      minAvailable: 1
+      config:
+        server-tokens: "false"
+      admissionWebhooks:
+        enabled: false
+      service:
+        type: LoadBalancer
+        externalTrafficPolicy: Local # This is needed to log client IPs
+        loadBalancerSourceRanges:
+        #Synopsys CIDRs if the LB is public
+        - 149.117.0.0/16
+        - 198.182.32.0/19
+        - 192.231.134.1/32 # DC2
+
+        # Cloudops-NAT IP
+        - 35.202.29.179/32
+
+        # Internal pods
+        - 172.16.0.0/16
+
+    defaultBackend:
+      enabled: true
