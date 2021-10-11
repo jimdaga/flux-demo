@@ -1,7 +1,7 @@
 apiVersion: kustomize.toolkit.fluxcd.io/v1beta1
 kind: Kustomization
 metadata:
-  name: cert-manager
+  name: ingress-internal
   namespace: flux-system
 spec:
   interval: 10m0s
@@ -10,6 +10,6 @@ spec:
   sourceRef:
     kind: GitRepository
     name: flux-system
-  path: ./apps/cert-manager/production-foo
+  path: ./apps/ingress-internal/non-production
   prune: true
   validation: client
