@@ -10,6 +10,14 @@ spec:
   sourceRef:
     kind: GitRepository
     name: flux-system
-  path: ./apps/cert-manager/production
+  # path: ./apps/cert-manager/production
+  path: ../
   prune: true
   validation: client
+---
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+  - ./apps/cert-manager/production
+patchesStrategicMerge:
+  - cert-manager-values.yaml
