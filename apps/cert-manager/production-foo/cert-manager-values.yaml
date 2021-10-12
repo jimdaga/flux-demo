@@ -9,4 +9,4 @@ spec:
       nameservers:
         - "1.1.1.1"
         - "8.8.8.8"
-    replicaCount: ${replica_count}
+    replicaCount: ${replica_count:=2}

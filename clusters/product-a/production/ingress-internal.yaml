@@ -11,5 +11,8 @@ spec:
     kind: GitRepository
     name: flux-system
   path: ./apps/ingress-internal/production
+  postBuild:  
+    substitute:
+      replica_count: "4"
   prune: true
   validation: client

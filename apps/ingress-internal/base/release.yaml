@@ -22,7 +22,7 @@ spec:
     controller:
       ingressClass: ingress-internal
       kind: Deployment
-      replicaCount: 2
+      replicaCount: ${replica_count:=2}
       minAvailable: 1
       config:
         server-tokens: "false"
