@@ -10,7 +10,6 @@ spec:
   sourceRef:
     kind: GitRepository
     name: flux-system
-  # path: ./apps/cert-manager/production
-  path: ./apps/cert-manager/_product-a/production
+  path: ./apps/cert-manager/production/foo
   prune: true
   validation: client
