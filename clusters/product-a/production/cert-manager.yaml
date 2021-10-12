@@ -10,7 +10,7 @@ spec:
   sourceRef:
     kind: GitRepository
     name: flux-system
-  path: ./apps/cert-manager/production-foo
+  path: ./apps/cert-manager/production-nameservers
   postBuild:  
     substitute:
       cluster_env: "prd"
