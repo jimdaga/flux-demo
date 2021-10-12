@@ -11,5 +11,9 @@ spec:
     kind: GitRepository
     name: flux-system
   path: ./apps/cert-manager/production-foo
+  postBuild:  
+    substitute:
+      replica_count: "6"
+      cluster_env: "prd"
   prune: true
   validation: client
