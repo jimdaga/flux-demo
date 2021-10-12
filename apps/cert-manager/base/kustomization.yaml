@@ -4,10 +4,5 @@ namespace: cert-manager
 resources:
   - namespace.yaml
   - release.yaml
----
-apiVersion: kustomize.config.k8s.io/v1beta1
-kind: Kustomization
-namespace: cert-manager-configs
-resources:
   - letsencrypt-staging.yaml
   - letsencrypt-production.yaml
