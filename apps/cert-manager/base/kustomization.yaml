@@ -8,9 +8,6 @@ resources:
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 namespace: cert-manager-configs
-spec:
-  dependsOn:
-    - name: cert-manager
 resources:
   - letsencrypt-staging.yaml
   - letsencrypt-production.yaml
