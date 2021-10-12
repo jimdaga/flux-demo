@@ -1,0 +1,12 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: cert-manager
+  namespace: cert-manager
+spec:
+  values:
+    podDnsConfig:
+      nameservers:
+        - "1.1.1.1"
+        - "8.8.8.8"
+    replicaCount: 3
