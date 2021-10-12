@@ -10,8 +10,6 @@ spec:
   sourceRef:
     kind: GitRepository
     name: flux-system
-  path: ./apps/cert-manager/production
+  path: ../cert-manager
   prune: true
   validation: client
-patchesStrategicMerge:
-  - cert-manager-values.yaml
